@@ -1,0 +1,15 @@
+{
+  "name": "itemloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "itemGeneratorSchema.js",
+  "dependencies": {
+    "json-schema-faker": "^0.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node itemGeneratorSchema.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

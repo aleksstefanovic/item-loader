@@ -1,0 +1,4 @@
+$1 is the amount of items you wish to add into the database
+$2 is the amount of stores each item is available  at
+
+node app.js $1 $2
