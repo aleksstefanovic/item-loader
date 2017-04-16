@@ -17,12 +17,7 @@ function generateItemSchema (storeAmount) {
 				{
 						type: 'object',
 						properties: {
-							prices: {
-								 current_price:{type:'string',faker:'commerce.price'} ,
-								 regular_price:{type:'string',faker:'commerce.price'},
-								 history_price:[],
-								 deals: ""
-							},
+							childId: "TEMP",
 							location:"TEMP",
 							stock: {faker:'random.number'}
 						},
@@ -59,8 +54,31 @@ function generateItemSchema (storeAmount) {
 	});
 }
 
+function generateChildItemSchema () {
+	return new Promise (function (resolve, reject) {
+		try {
+		var childItemSchema = {
+		  type: 'object',
+		  properties: {
+			_id: {type:'string', faker:'random.uuid'},
+			price: {type:'string', faker:'commerce.price'},
+			location: "TEMP",
+			parentId: "TEMP"
+		  },
+		  required: ['_id', 'price', 'location', 'parentId'],
+		};
+		resolve(childItemSchema);
+		}
+		catch (e) {
+			console.log("ERROR:"+e);
+			reject();
+		}
+	});
+}
+
 var obj = {
-	generateItemSchema: generateItemSchema
+	generateItemSchema: generateItemSchema,
+	generateChildItemSchema: generateChildItemSchema
 };
 
 module.exports = obj;

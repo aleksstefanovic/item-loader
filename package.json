@@ -4,7 +4,8 @@
   "description": "",
   "main": "itemGeneratorSchema.js",
   "dependencies": {
-    "json-schema-faker": "^0.3.3"
+    "json-schema-faker": "^0.3.3",
+    "linereader": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {
