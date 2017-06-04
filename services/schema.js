@@ -10,6 +10,7 @@ function generateItemSchema (storeAmount) {
 			_id: {type:'string', faker:'random.uuid'},
 		//{$ref:'#/definitions/positiveInt'},
 			name: {type:'string',faker:'item.name'},
+			category: {type: 'string', faker:'commerce.department'},
 			data: 
 			{
 				type:'array',
@@ -34,12 +35,12 @@ function generateItemSchema (storeAmount) {
 			packQuantity: {$ref:'#/definitions/positiveInt'},
 			image: {faker:'image.food'},
 		  },
-		  required: ['_id','name','data', 'longDescription', 'mass', 'brand', 'itemFrom', 'packQuantity', 'shortDescription', 'image'],
+		  required: ['_id','name', 'category', 'data', 'longDescription', 'mass', 'brand', 'itemFrom', 'packQuantity', 'shortDescription', 'image'],
 		  definitions: {
 			positiveInt: {
 			  type: 'integer',
 			  minimum: 0,
-			  maximum: 10,
+			  maximum: 11,
 			  exclusiveMinimum: true
 			}
 		  }
